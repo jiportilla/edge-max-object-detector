@@ -2,14 +2,14 @@
 
 # The type and name of the MMS file we are using
 OBJECT_TYPE=notebook
-OBJECT_ID=2_python_environment.ipynb
-PATH_TO_MODEL=/home/jovyan/notebooks/
+OBJECT_ID=demo2.ipynb
+PATH_TO_MODEL=/workspace
 
 # Very simple Horizon ML example using HZN MMS  to update ML model (index.js)
 # The ML model
 TEMP_DIR='/tmp'
 DESTINATION_PATH=${TEMP_DIR}/${OBJECT_ID}
-HT_DOCS=/home/jovyan/notebooks
+HT_DOCS=/workspace
 RUN_TIME=10
 
 echo "DEBUG: ****   Started pulling ESS ..."
@@ -29,7 +29,7 @@ echo "DEBUG: ****   auth, cert, baseURL: ${AUTH}${CERT}${BASEURL} ..."
 
 # Helper functions to check a valid model file has been pulled from ESS
 hasData() {
-   afilesize=$(wc -c "/tmp/2_python_environment.ipynb" | awk '{print $1}')
+   afilesize=$(wc -c "/tmp/demo2.ipynb" | awk '{print $1}')
    if (($afilesize > 100 ))#It is a valid model
    then
 	echo 'DEBUG: ****   New valid model file was found in ESS'
@@ -68,4 +68,3 @@ while true; do
     #check updates
     checkUpdates
 done
-

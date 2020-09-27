@@ -1,8 +1,8 @@
 {
   "properties": [
     {
-      "name": "sensor",
-      "value": "camera"
+      "name": "demo",
+      "value": "detector"
     },
     {
       "name": "location",

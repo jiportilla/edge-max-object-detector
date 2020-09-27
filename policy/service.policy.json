@@ -2,6 +2,6 @@
   "properties": [
   ],
   "constraints": [
-       "sensor == camera"
+       "demo == detector"
   ]
 }

@@ -21,7 +21,7 @@ SERVICE_VERSION ?=1.0.0
 PORT_NUM ?=5000
 DOCKER_NAME ?=max-object-detector
 OBJECT_TYPE ?=notebook
-OBJECT_ID ?=demo.ipynb
+OBJECT_ID ?=demo2.ipynb
 
 default: all
 
@@ -56,7 +56,7 @@ publish-deployment-policy:
 
   # target to publish new ML model file to mms
 publish-mms-object:
-	hzn mms object publish -m mms/object.json -f mms/demo.ipynb
+	hzn mms object publish -m mms/object.json -f mms/demo2.ipynb
 
   # target to list mms object
 list-mms-object:
