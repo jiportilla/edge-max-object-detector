@@ -1,0 +1,8 @@
+{
+    "HZN_ORG_ID": "mycluster",
+    "MetadataVars": {
+        "DOCKER_IMAGE_BASE": "iportilla/max-object-detector",
+        "SERVICE_NAME": "object-detector",
+        "SERVICE_VERSION": "1.0.0"
+    }
+}
