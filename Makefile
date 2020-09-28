@@ -12,8 +12,8 @@ SYSTEM_ARCH := $(shell uname -m | sed -e 's/aarch64.*/arm64/' -e 's/x86_64.*/amd
 # Default ARCH to the architecture of this machines (as horizon/golang describes it)
 export ARCH ?= $(shell hzn architecture)
 
-"DOCKER_IMAGE_BASE": "iportilla/max-object-detector",
-        "SERVICE_NAME": "object-detector",
+# See https://github.com/IBM/MAX-Object-Detector
+
         
 DOCKER_IMAGE_BASE ?= iportilla/max-object-detector
 SERVICE_NAME ?=object-detector
@@ -28,7 +28,8 @@ default: all
 all: build run
 
 build:
-	docker build -t $(DOCKER_IMAGE_BASE)_$(ARCH):$(SERVICE_VERSION) -f ./Dockerfile.$(ARCH) .
+	docker build --build-arg model=faster_rcnn_resnet101 -t $(DOCKER_IMAGE_BASE)_$(ARCH):$(SERVICE_VERSION) -f ./Dockerfile.$(ARCH) .
+	#docker build -t $(DOCKER_IMAGE_BASE)_$(ARCH):$(SERVICE_VERSION) -f ./Dockerfile.$(ARCH) .
 
 run:
 	@echo "Open your browser and go to http://localhost:5000"
